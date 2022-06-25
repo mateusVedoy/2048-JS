@@ -253,17 +253,12 @@ function moveBottom() {
     }
 }
 
-//verifica se o jogo acabou
-// precisar verificar se:
-// tabuleiro está cheio
-// se não tem como movimentar as peças
 function isGameOver() {
     let isOver = true;
     for (let r = 0; r < 4; r++) {
         for (let c = 0; c < 4; c++) {
           if (board[r][c] == 0) {
             isOver = false;
-            console.log(isOver)
           }
         }
     }
@@ -272,7 +267,6 @@ function isGameOver() {
             let aux = board[r][c];
             if (aux != 0 && (aux == board[r + 1][c] || aux == board[r][c + 1])) {
                 isOver = false;
-                console.log(isOver)
             }
         }
     }
@@ -281,7 +275,6 @@ function isGameOver() {
             let aux = board[r][c];
             if (aux != 0 && (aux == board[r - 1][c] || aux == board[r][c - 1])) {
                 isOver = false;
-                console.log(isOver)
             }
         }
     }
