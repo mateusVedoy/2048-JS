@@ -24,7 +24,20 @@ function eventPLay(target){
             moveLeft();
             break;
     }
-    isGameWon();
+    if(isGameWon()){
+        Toastify({
+            text: "Você ganhou!",
+            duration: -1,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #98FB98, 	#00FF00)",
+            }
+          }).showToast();
+        document.getElementById("board").style.opacity = "0.5";
+        document.removeEventListener('keyup', eventPLay);
+    }
     if(isGameOver()){
         Toastify({
             text: "Fim de jogo!",

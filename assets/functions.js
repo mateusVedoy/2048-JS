@@ -310,7 +310,9 @@ function startsANewGame() {
 
 function isGameWon() {
     if (score >= 2048) {
-        alert("Você ganhou!");
         changeBestScore("bestScore", score);
+        return true;
+    }else{
+        return false;
     }
 }
