@@ -278,7 +278,7 @@ function isGameOver() {
             }
         }
     }
-    changeBestScore("bestScore", score);
+    if(isOver) changeBestScore("bestScore", score);
     return isOver;
 }
 
